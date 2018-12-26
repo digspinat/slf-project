@@ -11,7 +11,7 @@ import "../css/styles.css";
 
 const Second = () =>
         <Segment vertical className="header">
-        <Grid columns={5} stackable textAlign='left'>
+        <Grid columns={8} stackable textAlign='left'>
            <Grid.Row verticalAlign='middle'>
             <Grid.Column style={{textAlign:'center'}}>
               <Link to="/accordion/">Accordion</Link>
@@ -25,7 +25,23 @@ const Second = () =>
             <Grid.Column style={{textAlign:'center'}}>
               <Link to="/contact/">Contact</Link>
             </Grid.Column>
+            <Grid.Column style={{textAlign:'center'}}>
+            <Link to="/howto/">How to</Link>
+            </Grid.Column>
+            <Grid.Column style={{textAlign:'center'}}>
+            <Link to="/header/">Header&Description</Link>
+            </Grid.Column>
            </Grid.Row>
+         </Grid>
+         <Grid columns={8} stackable textAlign='left'>
+         <Grid.Row verticalAlign='middle'>
+         <Grid.Column style={{textAlign:'center'}}>
+         <Link to="/headerpart2/">Header&DescriptionPart2</Link>
+         </Grid.Column>
+          <Grid.Column style={{textAlign:'center'}}>
+          <Link to="/feature/">Feature</Link>
+          </Grid.Column>
+         </Grid.Row>
          </Grid>
         </Segment>
 export default Second;

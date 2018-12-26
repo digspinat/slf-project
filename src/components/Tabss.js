@@ -84,8 +84,7 @@ export default () => (
       <div className="masthead">
         <Segment vertical  style={{paddingLeft: 10}}>
           {data.allDatoCmsPage.edges.map(({node})=> {
-
-              if(node.page10 == "advies"){
+              if(node.page05 == "Test page modular | Tabs horizontal no images"){
                 for(let prop in node.page20) {
                   if(Object.keys(node.page20[prop]).length > 1){
                     let myclassnme = "buttonpad"
@@ -95,7 +94,7 @@ export default () => (
                       myclassnme = "redbackgrnd buttonpad";
                     }
                     return(
-                      <div><div>
+                      <div>
                         <Tab className="tabpadding" menu={{ secondary: true, pointing: true }} panes={ [
                                   { menuItem: node.page20[prop].block1505, render: () => <Tab.Pane  attached={false}>{node.page20[prop].block1510}
                                                 <div className="buttonpad"><Image src={node.page20[prop].block1515} size='medium' wrapped /></div>
@@ -121,24 +120,52 @@ export default () => (
                                                   <div className="buttonpad"><Image src={node.page20[prop].block15130.url} size='medium' wrapped /></div>
                                                 </Tab.Pane> }:"",
                                 ]} />
-                          </div><div>
-
-                      </div></div>
+                          </div>
                     )
                   }
               }
-
-
+            }
+              if(node.page05 === "Test page modular | Tabs vertical "){
+                for(let pro in node.page20) {
+                  if(Object.keys(node.page20[pro]).length > 1){
+                    let myclassnme = "buttonpad"
+                    if(node.page20[pro].block15150.cssClassName === "Quote background blue"){
+                      myclassnme = "bluebackgrnd buttonpad";
+                    }else if(node.page20[pro].block15150.cssClassName === "Quote background red"){
+                      myclassnme = "redbackgrnd buttonpad";
+                    }
+                    return(
+                      <div>
+                        <Tab className="tabpadding" menu={{ secondary: true, vertical:true, pointing: true }} panes={ [
+                                  { menuItem: node.page20[pro].block1505, render: () => <Tab.Pane  attached={false}>{node.page20[pro].block1510}
+                                                <div className="buttonpad"><Image src={node.page20[pro].block1515} size='medium' wrapped /></div>
+                                                <div className="buttonpad"><Image src={node.page20[pro].block1525.url} size='medium' wrapped /></div>
+                                              {node.page20[pro].block15135? <div  className={myclassnme}><Message>
+                                                <Message.Header className="colorquote">{node.page20[pro].block15145}</Message.Header>
+                                              </Message></div>:""}
+                                                </Tab.Pane>},
+                                  {menuItem: node.page20[pro].block1565, render: () => <Tab.Pane attached={false}>{node.page20[pro].block1570}
+                                                <div className="buttonpad"><Image src={node.page20[pro].block1550} size='medium' wrapped /></div>
+                                                <div className="buttonpad"><Image src={node.page20[pro].block1555.url} size='medium' wrapped /></div>
+                                                </Tab.Pane>},node.page20[pro].block1560 ?
+                                  { menuItem: node.page20[pro].block1540, render: () => <Tab.Pane attached={false}>{node.page20[pro].block1545}
+                                                <div className="buttonpad"><Image src={node.page20[pro].block1575} size='medium' wrapped /></div>
+                                                  <div className="buttonpad"><Image src={node.page20[pro].block1580.url} size='medium' wrapped /></div>
+                                                </Tab.Pane> }:"",node.page20[pro].block1585?
+                                  { menuItem: node.page20[pro].block1590, render: () => <Tab.Pane attached={false}>{node.page20[pro].block1595}
+                                                  <div className="buttonpad"><Image src={node.page20[pro].block15100} size='medium' wrapped /></div>
+                                                  <div className="buttonpad"><Image src={node.page20[pro].block15105.url} size='medium' wrapped /></div>
+                                                </Tab.Pane> }:"",node.page20[pro].block15110?
+                                  { menuItem: node.page20[pro].block15115, render: () => <Tab.Pane attached={false}>{node.page20[pro].block15120}
+                                                  <div className="buttonpad"><Image src={node.page20[pro].block15125} size='medium' wrapped /></div>
+                                                  <div className="buttonpad"><Image src={node.page20[pro].block15130.url} size='medium' wrapped /></div>
+                                                </Tab.Pane> }:"",
+                                ]} />
+                          </div>
+                    )
+                  }
               }
-
-            // if(node.page10 === "contact"){
-            //   return(
-            //     <div>
-            //     text
-            //        {node.page20[0].block0505}
-            //     </div>
-            //   )
-            // }
+            }
           }
         )}
         </Segment>

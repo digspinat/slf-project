@@ -1,19 +1,19 @@
 import * as React from "react";
 import {
-  Tab,Icon,Header,Button
+    Accordion,Icon,Header
 } from "semantic-ui-react";
 import "../css/styles.css";
 import "../css/responsive.css";
 import "../css/semantic.min.css";
 import "prismjs/themes/prism-okaidia.css";
 import Layout from "../components/Layout.js"
-import Buttonn from "../components/Buttonn.js"
+import Headerpage from "../components/Hrader.js"
 
-const Buttn = ( ) =>
+const Headr = ( ) =>
   <Layout>
-            <div className="contentWrapper">
-            <Buttonn />
-            </div>
+    <div className="contentWrapper">
+        <Headerpage />
+    </div>
   </Layout>;
 
-export default Buttn;
+export default Headr;

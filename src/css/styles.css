@@ -61,8 +61,44 @@
 .ui.segment {
   padding: 0px !important;
 }
+.ui.header .sub.header{
+  padding-top: 10px !important;
+}
+.ui.attached.segment
+{
+  padding: 10px !important;
+}
 .masthead .ui.menu .ui.button {
   margin-left: 0.5em;
+}
+.large.ui.attached.segment
+{
+  font-size: large !important;
+}
+.small.ui.attached.segment
+{
+  font-size: small !important;
+}
+.larger.ui.attached.segment
+{
+  font-size: larger !important;
+}
+.medium.ui.attached.segment
+{
+  font-size: medium !important;
+}
+.customheadStyleHead .content .header {
+  font-weight: 600 !important;
+}
+.customheadStyleHead .content .description {
+  font-weight: 100 !important;
+}
+.customheadStyleDesc .content .header {
+  font-weight: 100 !important;
+}
+.customheadStyleDesc .content .description {
+  font-weight: bold !important;
+  color: black;
 }
 .ui.main-nav {
   padding-top: 5px !important;
