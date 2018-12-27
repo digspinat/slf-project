@@ -31,11 +31,6 @@ export default () => (
               menu20
               menu70
               menu50
-              menu105 {
-                ... on DatoCmsBlog {
-                  blog05
-                }
-              }
             }
           }
         }

@@ -22,7 +22,7 @@ export default () => (
                   page05
                   page10
                   page20 {
-                    ... on DatoCmsBlock040
+                    ... on DatoCmsBlock40
                     {
                       block4005
                       block4010

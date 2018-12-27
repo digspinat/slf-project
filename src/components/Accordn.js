@@ -14,33 +14,33 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-          allDatoCmsPage(filter: { locale: { eq: "en"}}) {
-              edges {
-                node {
-                	id
-                  page05
-                  page10
-                  page20 {
-                    ... on DatoCmsBlock05{
-                      block0505
-                      block0510
-                      block0515
-                      block0540
-                      block0595
-                      block0570
-                      block05100
-                      block0580
-                      block0520
-                      block05105
-                      block0590
-                      block0525
-                      block0565
-                      block0560
+            allDatoCmsPage(filter: { locale: { eq: "en"}}) {
+                edges {
+                  node {
+                  	id
+                    page05
+                    page10
+                    page20 {
+                      ... on DatoCmsBlock05{
+                        block0505
+                        block0510
+                        block0515
+                        block0540
+                        block0595
+                        block0570
+                        block05100
+                        block0580
+                        block0520
+                        block05105
+                        block0590
+                        block0525
+                        block0565
+                        block0560
+                      }
                     }
-                  }
+                }
               }
             }
-          }
       }
     `}
     render={data => (
