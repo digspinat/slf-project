@@ -44,7 +44,7 @@ exports.createPages = ({graphql, actions}) => {
     graphql(
       `
       {
-        posts: allDatoCmsMenu(filter: { locale: { eq: "en"}, menu05: { eq: "Header"}}) {
+        posts: allDatoCmsMenu(filter: { locale: { eq: "nl"}, menu05: { eq: "Header"}}) {
           edges {
             node {
               menu05

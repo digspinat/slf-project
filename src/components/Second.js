@@ -13,7 +13,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-        allDatoCmsMenu(filter: { locale: { eq: "en"}}) {
+        allDatoCmsMenu(filter: { locale: { eq: "nl"}}) {
           edges {
             node {
               menu25

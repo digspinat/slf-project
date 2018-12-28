@@ -7,17 +7,25 @@ import { Link } from "gatsby";
 import Layout from "../components/Layout.js"
 
 const Pages = ({data}) => {
-  console.log(data.allDatoCmsPage.edges);
   const myData = data.allDatoCmsPage.edges[0].node.page20;
   // console.log(myData);
-
+  let horiz=true;
+  if(data.allDatoCmsPage.edges[0].node.page05 == "Test page modular | Tabs horizontal no images")
+  {
+       horiz=true;
+  }
+  else if(data.allDatoCmsPage.edges[0].node.page05 == "Test page modular | Tabs vertical"){
+        horiz=false;
+  }
   const mapQuote = myData.map((data) => {
     if("block5005" in data){
       return (
-        <div>
-        <Message>
-        <Message.Header className="colorquote">{data.block5005}</Message.Header>
-        </Message>
+        <div className="buttonpad">
+          <div className="buttonpad">
+              <Message>
+              <Message.Header className="colorquote">{data.block5005}</Message.Header>
+              </Message>
+          </div>
         </div>
       )
     }
@@ -25,10 +33,12 @@ const Pages = ({data}) => {
   const mapQuotelink = myData.map((data) => {
     if("block4505" in data){
       return (
-        <div>
-        <Message>
-        <Message.Header className="colorquote">{data.block4515}</Message.Header>
-        </Message>
+        <div className="buttonpad">
+          <div className="buttonpad">
+            <Message>
+            <Message.Header className="colorquote">{data.block4515}</Message.Header>
+            </Message>
+          </div>
         </div>
       )
     }
@@ -47,7 +57,8 @@ const Pages = ({data}) => {
               size="small";
             }
               return (
-                <div>
+                <div className="buttonpad">
+                  <div className="buttonpad">
                       {data.block02505 ?
                       <Header as={data.block2540} attached>
                         {data.block2510}
@@ -60,39 +71,76 @@ const Pages = ({data}) => {
                       <Segment  className={size} attached>
                       {data.block2535}
                           </Segment>:""}
+                    </div>
                 </div>
               )
     }
   });
-  const mapQuoteFeature = myData.map((data) => {
-    
+  let checkGrid = false;
+  let fii = 0;
+  const mapQuoteFeature = myData.map((data,index) => {
          if("block3005" in data){
-            let row2=false;
-            return (
-              <div>
-              <div className="buttonpad">
-                  <Grid divided='vertically' celled>
-                      <Grid.Row columns={2}>
-                          <Grid.Column>
-                              <Header > {data.block3010}  </Header>
-                              <p> {data.block3015}</p>
-                          </Grid.Column>
-                          <Grid.Column>
-                            <Header > {data.block3010}</Header>
-                            <p> {data.block3015}</p>
-                          </Grid.Column>
-                        </Grid.Row>
-                   </Grid>
-              </div>
-              </div>
-            )
+           if(data.block30120.cssClassName == "Feature group 2 in a row")
+              {
+                 checkGrid = true;
+                 fii++;
+                 if(fii<=2)
+                 {
+                   return (
+                     <Grid.Column>
+                       <Header > {data.block3010}</Header>
+                       <p> {data.block3015}</p>
+                     </Grid.Column>
+                   )
+               }
+            }
+          }
+  });
+  let checkGrid4 = false;
+  let fi = 0;
+  const mapQuoteFeature4 = myData.map((data,index) => {
+         if("block3005" in data){
+           if(data.block30120.cssClassName == "Feature group 4 in a row"){
+              checkGrid4 = true;
+              fi++;
+              if(fi<=4){
+                return (
+                  <Grid.Column>
+                  <Header > {data.block3010}</Header>
+                  <p> {data.block3015}</p>
+                  </Grid.Column>
+                )
+              }
+
+            }
+          }
+  });
+  let checkcolunm = false;
+  const mapQuoteFeatureclm = myData.map((data,index) => {
+         if("block3005" in data){
+           if(data.block30120.cssClassName == "Feature group 2 in column" || data.block30120.cssClassName == "Feature single" )
+              {
+                checkcolunm = true;
+                  return (
+                    <Grid celled>
+                      <Grid.Row>
+                        <Grid.Column>
+                        <Header > {data.block3010}</Header>
+                        <p> {data.block3015}</p>
+                         </Grid.Column>
+                      </Grid.Row>
+                    </Grid>
+                  )
+            }
           }
   });
   const mapQuoteimage = myData.map((data) => {
     if("block03505" in data){
       return (
-        <div>
+        <div className="buttonpad">
+          <div className="buttonpad">
                 <Image  size="small" src={data.block3510.url}/>
+           </div>
         </div>
       )
     }
@@ -105,66 +153,58 @@ const Pages = ({data}) => {
               }else if(data.block15150.cssClassName === "Quote background red"){
                 myclassnme = "redbackgrnd buttonpad";
               }
-              let horiz=true;
-              if(data.page05 == "Test page modular | Tabs horizontal no images")
-              {
-                   horiz=true;
-              }
-              else if(data.page05 == "Test page modular | Tabs vertical"){
-                    horiz=false;
-              }
               return (
                 <div>
                 {horiz ?
                 <Tab className="tabpadding" menu={{ secondary: true, pointing: true }} panes={ [
                           { menuItem: data.block1505, render: () => <Tab.Pane  attached={false}>{data.block1510}
-                                        <div className="buttonpad"><Image src={data.block1515} size='medium' wrapped /></div>
-                                      <div className="buttonpad"><Image src={data.block1525.url} size='medium' wrapped /></div>
+                                      {data.block1515 ? <div className="buttonpad"><Image src={data.block1515} size='medium' wrapped /></div>: ""}
+                                      {data.block1525.url ? <div className="buttonpad"><Image src={data.block1525.url} size='medium' wrapped /></div>:""}
                                       {data.block15135? <div  className={myclassnme}><Message>
                                         <Message.Header className="colorquote">{data.block15145}</Message.Header>
                                       </Message></div>:""}
                                         </Tab.Pane>},
                           {menuItem: data.block1565, render: () => <Tab.Pane attached={false}>{data.block1570}
-                                        <div className="buttonpad"><Image src={data.block1550} size='medium' wrapped /></div>
-                                        <div className="buttonpad"><Image src={data.block1555.url} size='medium' wrapped /></div>
+                                         {data.block1550 ? <div className="buttonpad"><Image src={data.block1550} size='medium' wrapped /></div>:""}
+                                        {data.block1555.url ? <div className="buttonpad"><Image src={data.block1555.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane>},data.block1560 ?
                           { menuItem: data.block1540, render: () => <Tab.Pane attached={false}>{data.block1545}
-                                        <div className="buttonpad"><Image src={data.block1575} size='medium' wrapped /></div>
-                                        <div className="buttonpad"><Image src={data.block1580.url} size='medium' wrapped /></div>
+                                        {data.block1575 ? <div className="buttonpad"><Image src={data.block1575} size='medium' wrapped /></div>:""}
+                                          {data.block1580.url ?<div className="buttonpad"><Image src={data.block1580.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane> }:"",data.block1585?
                           { menuItem: data.block1590, render: () => <Tab.Pane attached={false}>{data.block1595}
-                                          <div className="buttonpad"><Image src={data.block15100} size='medium' wrapped /></div>
-                                          <div className="buttonpad"><Image src={data.block15105.url} size='medium' wrapped /></div>
+                                            {data.block15100 ?<div className="buttonpad"><Image src={data.block15100} size='medium' wrapped /></div>:""}
+                                            {data.block15105.url ?<div className="buttonpad"><Image src={data.block15105.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane> }:"",data.block15110?
                           { menuItem: data.block15115, render: () => <Tab.Pane attached={false}>{data.block15120}
-                                          <div className="buttonpad"><Image src={data.block15125} size='medium' wrapped /></div>
-                                          <div className="buttonpad"><Image src={data.block15130.url} size='medium' wrapped /></div>
+                                          {data.block15125 ? <div className="buttonpad"><Image src={data.block15125} size='medium' wrapped /></div> : ""}
+                                          {data.block15130.url ?<div className="buttonpad"><Image src={data.block15130.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane> }:"",
                         ]} />:
                         <Tab className="tabpadding" menu={{ secondary: true, vertical:true,pointing: true }} panes={ [
-                                  { menuItem: data.block1505, render: () => <Tab.Pane  attached={false}>{data.block1510}
-                                                <div className="buttonpad"><Image src={data.block1515} size='medium' wrapped /></div>
-                                              <div className="buttonpad"><Image src={data.block1525.url} size='medium' wrapped /></div>
-                                              {data.block15135? <div  className={myclassnme}><Message>
-                                                <Message.Header className="colorquote">{data.block15145}</Message.Header>
-                                              </Message></div>:""}
-                                                </Tab.Pane>},
-                                  {menuItem: data.block1565, render: () => <Tab.Pane attached={false}>{data.block1570}
-                                                <div className="buttonpad"><Image src={data.block1550} size='medium' wrapped /></div>
-                                                <div className="buttonpad"><Image src={data.block1555.url} size='medium' wrapped /></div>
-                                                </Tab.Pane>},data.block1560 ?
-                                  { menuItem: data.block1540, render: () => <Tab.Pane attached={false}>{data.block1545}
-                                                <div className="buttonpad"><Image src={data.block1575} size='medium' wrapped /></div>
-                                                <div className="buttonpad"><Image src={data.block1580.url} size='medium' wrapped /></div>
-                                                </Tab.Pane> }:"",data.block1585?
-                                  { menuItem: data.block1590, render: () => <Tab.Pane attached={false}>{data.block1595}
-                                                  <div className="buttonpad"><Image src={data.block15100} size='medium' wrapped /></div>
-                                                  <div className="buttonpad"><Image src={data.block15105.url} size='medium' wrapped /></div>
-                                                </Tab.Pane> }:"",data.block15110?
-                                  { menuItem: data.block15115, render: () => <Tab.Pane attached={false}>{data.block15120}
-                                                  <div className="buttonpad"><Image src={data.block15125} size='medium' wrapped /></div>
-                                                  <div className="buttonpad"><Image src={data.block15130.url} size='medium' wrapped /></div>
-                                                </Tab.Pane> }:"",
+                          { menuItem: data.block1505, render: () => <Tab.Pane  attached={false}>{data.block1510}
+                                      {data.block1515 ? <div className="buttonpad"><Image src={data.block1515} size='medium' wrapped /></div>: ""}
+                                      {data.block1525.url ? <div className="buttonpad"><Image src={data.block1525.url} size='medium' wrapped /></div>:""}
+                                      {data.block15135? <div  className={myclassnme}><Message>
+                                        <Message.Header className="colorquote">{data.block15145}</Message.Header>
+                                      </Message></div>:""}
+                                        </Tab.Pane>},
+                          {menuItem: data.block1540, render: () => <Tab.Pane attached={false}>{data.block1545}
+                                         {data.block1550 ? <div className="buttonpad"><Image src={data.block1550} size='medium' wrapped /></div>:""}
+                                        {data.block1555.url ? <div className="buttonpad"><Image src={data.block1555.url} size='medium' wrapped /></div>:""}
+                                        </Tab.Pane>},data.block1560 ?
+                          { menuItem: data.block1565, render: () => <Tab.Pane attached={false}>{data.block1570}
+                                        {data.block1575 ? <div className="buttonpad"><Image src={data.block1575} size='medium' wrapped /></div>:""}
+                                          {data.block1580.url ?<div className="buttonpad"><Image src={data.block1580.url} size='medium' wrapped /></div>:""}
+                                        </Tab.Pane> }:"",data.block1585?
+                          { menuItem: data.block1590, render: () => <Tab.Pane attached={false}>{data.block1595}
+                                            {data.block15100 ?<div className="buttonpad"><Image src={data.block15100} size='medium' wrapped /></div>:""}
+                                            {data.block15105.url ?<div className="buttonpad"><Image src={data.block15105.url} size='medium' wrapped /></div>:""}
+                                        </Tab.Pane> }:"",data.block15110?
+                          { menuItem: data.block15115, render: () => <Tab.Pane attached={false}>{data.block15120}
+                                          {data.block15125 ? <div className="buttonpad"><Image src={data.block15125} size='medium' wrapped /></div> : ""}
+                                          {data.block15130.url ?<div className="buttonpad"><Image src={data.block15130.url} size='medium' wrapped /></div>:""}
+                                        </Tab.Pane> }:"",
                                 ]} />}
                                 </div>
                               )
@@ -180,29 +220,31 @@ const Pages = ({data}) => {
               classhead = "customheadStyleDesc"
             }
             return (
-              <div>
-              <div className={classhead}>
-                <Header as="h3">{data.block4005}</Header>
-                <Card fluid
-                        header={data.block4010}
-                        description={data.block4015}/>
-                 {data.block4020 ?
-                <Card  fluid
-                        header={data.bloc1k4025}
-                        description={data.block4030}/>:""}
-                {data.block4035 ?
-                <Card  fluid
-                       header={data.block4040}
-                       description={data.block4045}/>:""}
-                {data.block4050 ?
-                <Card  fluid
-                        header={data.block4055}
-                        description={data.block4060}/>:""}
-               {data.block4065 ?
-                <Card  fluid
-                       header={data.block4070}
-                       description={data.block4075}/>:""}
-              </div>
+              <div className="buttonpad">
+                <div className="buttonpad">
+                 <div className={classhead}>
+                        <Header as="h3">{data.block4005}</Header>
+                        <Card fluid
+                                header={data.block4010}
+                                description={data.block4015}/>
+                         {data.block4020 ?
+                        <Card  fluid
+                                header={data.bloc1k4025}
+                                description={data.block4030}/>:""}
+                        {data.block4035 ?
+                        <Card  fluid
+                               header={data.block4040}
+                               description={data.block4045}/>:""}
+                        {data.block4050 ?
+                        <Card  fluid
+                                header={data.block4055}
+                                description={data.block4060}/>:""}
+                       {data.block4065 ?
+                        <Card  fluid
+                               header={data.block4070}
+                               description={data.block4075}/>:""}
+                    </div>
+                </div>
               </div>
             )
       }
@@ -210,7 +252,8 @@ const Pages = ({data}) => {
   const mapQuoteaccordn = myData.map((data) => {
     if("block0505" in data){
       return (
-        <div>
+        <div className="buttonpad">
+          <div className="buttonpad">
                 <Accordion defaultActiveIndex={0} panels={[
                   {
                     key: 'what-is-dog',
@@ -248,6 +291,7 @@ const Pages = ({data}) => {
                     ].join(' '),
                   },
                 ]} fluid styled/>
+            </div>
         </div>
       )
     }
@@ -260,9 +304,29 @@ const Pages = ({data}) => {
                                 {mapQuote}
                                 {mapQuotelink}
                                 {mapQuoteaccordn}
-                                {mapQuoteFeature}
                                 {mapQuoteheaderdecription}
                                 {mapQuotehowto}
+                                {checkGrid ?
+                                  <Grid divided='vertically' celled>
+                                  <Grid.Row columns='equal'>
+                                  {mapQuoteFeature}
+                                  </Grid.Row>
+                                  </Grid>
+                                  :
+                                  ""
+                                }
+                                {checkGrid4 ?
+                                  <Grid divided='vertically' celled>
+                                  <Grid.Row columns='equal'>
+                                  {mapQuoteFeature4}
+                                  </Grid.Row>
+                                  </Grid>
+                                  :
+                                  ""
+                                }
+                                {checkcolunm ?
+                                    mapQuoteFeatureclm:
+                                    ""}
                                 {mapQuoteimage}
                       </Segment>
                   </div>
@@ -272,7 +336,7 @@ const Pages = ({data}) => {
 export default Pages
 export const query = graphql`
  query($slug:String!) {
-   allDatoCmsPage(filter: {page30: {eq: $slug}, locale: { eq: "en"}}){
+   allDatoCmsPage(filter: {page30: {eq: $slug}, locale: { eq: "nl"}}){
     edges{
       node{
         id

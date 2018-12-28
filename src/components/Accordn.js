@@ -14,7 +14,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-            allDatoCmsPage(filter: { locale: { eq: "en"}}) {
+            allDatoCmsPage(filter: { locale: { eq: "nl"}}) {
                 edges {
                   node {
                   	id
