@@ -16,21 +16,7 @@ export default () => (
         allDatoCmsMenu(filter: { locale: { eq: "en"}}) {
           edges {
             node {
-              menu25
-              menu05
-              menu30
-              menu10
-              menu15 {
-                id
-                page05
-                page30
-                page10
-              }
-              menu35
-              menu40
-              menu20
-              menu70
-              menu50
+            id
             }
           }
         }
