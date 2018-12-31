@@ -153,57 +153,77 @@ const Pages = ({data}) => {
               }else if(data.block15150.cssClassName === "Quote background red"){
                 myclassnme = "redbackgrnd buttonpad";
               }
+              let urlblock1525 = false;
+              if(data.block1525 != null){
+                urlblock1525 = true;
+              }
+              let urlblock1555 = false;
+              if(data.block1555 != null){
+                urlblock1555 = true;
+              }
+              let urlblock1580 = false;
+              if(data.block1580 != null){
+                urlblock1580 = true;
+              }
+              let urlblock15105 = false;
+              if(data.block15105 != null){
+                urlblock15105 = true;
+              }
+              let urlblock15130 = false;
+              if(data.block15130 != null){
+                urlblock15130 = true;
+              }
               return (
                 <div>
                 {horiz ?
                 <Tab className="tabpadding" menu={{ secondary: true, pointing: true }} panes={ [
                           { menuItem: data.block1505, render: () => <Tab.Pane  attached={false}>{data.block1510}
                                       {data.block1515 ? <div className="buttonpad"><Image src={data.block1515} size='medium' wrapped /></div>: ""}
-                                      {data.block1525.url ? <div className="buttonpad"><Image src={data.block1525.url} size='medium' wrapped /></div>:""}
+                                      {urlblock1525  ? <div className="buttonpad"><Image src={data.block1525.url} size='medium' wrapped /></div>:""}
                                       {data.block15135? <div  className={myclassnme}><Message>
                                         <Message.Header className="colorquote">{data.block15145}</Message.Header>
                                       </Message></div>:""}
                                         </Tab.Pane>},
                           {menuItem: data.block1565, render: () => <Tab.Pane attached={false}>{data.block1570}
                                          {data.block1550 ? <div className="buttonpad"><Image src={data.block1550} size='medium' wrapped /></div>:""}
-                                        {data.block1555.url ? <div className="buttonpad"><Image src={data.block1555.url} size='medium' wrapped /></div>:""}
+                                        {urlblock1555 ? <div className="buttonpad"><Image src={data.block1555.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane>},data.block1560 ?
                           { menuItem: data.block1540, render: () => <Tab.Pane attached={false}>{data.block1545}
                                         {data.block1575 ? <div className="buttonpad"><Image src={data.block1575} size='medium' wrapped /></div>:""}
-                                          {data.block1580.url ?<div className="buttonpad"><Image src={data.block1580.url} size='medium' wrapped /></div>:""}
+                                          {urlblock1580 ?<div className="buttonpad"><Image src={data.block1580.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane> }:"",data.block1585?
                           { menuItem: data.block1590, render: () => <Tab.Pane attached={false}>{data.block1595}
                                             {data.block15100 ?<div className="buttonpad"><Image src={data.block15100} size='medium' wrapped /></div>:""}
-                                            {data.block15105.url ?<div className="buttonpad"><Image src={data.block15105.url} size='medium' wrapped /></div>:""}
+                                            {urlblock15105 ?<div className="buttonpad"><Image src={data.block15105.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane> }:"",data.block15110?
                           { menuItem: data.block15115, render: () => <Tab.Pane attached={false}>{data.block15120}
                                           {data.block15125 ? <div className="buttonpad"><Image src={data.block15125} size='medium' wrapped /></div> : ""}
-                                          {data.block15130.url ?<div className="buttonpad"><Image src={data.block15130.url} size='medium' wrapped /></div>:""}
+                                          {urlblock15130 ?<div className="buttonpad"><Image src={data.block15130.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane> }:"",
                         ]} />:
                         <Tab className="tabpadding" menu={{ secondary: true, vertical:true,pointing: true }} panes={ [
                           { menuItem: data.block1505, render: () => <Tab.Pane  attached={false}>{data.block1510}
                                       {data.block1515 ? <div className="buttonpad"><Image src={data.block1515} size='medium' wrapped /></div>: ""}
-                                      {data.block1525.url ? <div className="buttonpad"><Image src={data.block1525.url} size='medium' wrapped /></div>:""}
+                                      {urlblock1525 ? <div className="buttonpad"><Image src={data.block1525.url} size='medium' wrapped /></div>:""}
                                       {data.block15135? <div  className={myclassnme}><Message>
                                         <Message.Header className="colorquote">{data.block15145}</Message.Header>
                                       </Message></div>:""}
                                         </Tab.Pane>},
                           {menuItem: data.block1540, render: () => <Tab.Pane attached={false}>{data.block1545}
                                          {data.block1550 ? <div className="buttonpad"><Image src={data.block1550} size='medium' wrapped /></div>:""}
-                                        {data.block1555.url ? <div className="buttonpad"><Image src={data.block1555.url} size='medium' wrapped /></div>:""}
+                                        {urlblock1555 ? <div className="buttonpad"><Image src={data.block1555.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane>},data.block1560 ?
                           { menuItem: data.block1565, render: () => <Tab.Pane attached={false}>{data.block1570}
                                         {data.block1575 ? <div className="buttonpad"><Image src={data.block1575} size='medium' wrapped /></div>:""}
-                                          {data.block1580.url ?<div className="buttonpad"><Image src={data.block1580.url} size='medium' wrapped /></div>:""}
+                                          {urlblock1580 ?<div className="buttonpad"><Image src={data.block1580.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane> }:"",data.block1585?
                           { menuItem: data.block1590, render: () => <Tab.Pane attached={false}>{data.block1595}
                                             {data.block15100 ?<div className="buttonpad"><Image src={data.block15100} size='medium' wrapped /></div>:""}
-                                            {data.block15105.url ?<div className="buttonpad"><Image src={data.block15105.url} size='medium' wrapped /></div>:""}
+                                            {urlblock15105 ?<div className="buttonpad"><Image src={data.block15105.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane> }:"",data.block15110?
                           { menuItem: data.block15115, render: () => <Tab.Pane attached={false}>{data.block15120}
                                           {data.block15125 ? <div className="buttonpad"><Image src={data.block15125} size='medium' wrapped /></div> : ""}
-                                          {data.block15130.url ?<div className="buttonpad"><Image src={data.block15130.url} size='medium' wrapped /></div>:""}
+                                          {urlblock15130 ?<div className="buttonpad"><Image src={data.block15130.url} size='medium' wrapped /></div>:""}
                                         </Tab.Pane> }:"",
                                 ]} />}
                                 </div>
