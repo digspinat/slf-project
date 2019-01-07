@@ -41,10 +41,11 @@ exports.createPages = ({graphql, actions}) => {
         return Object.assign({}, mem,
         {[templateName]: path.resolve(`src/templates/${kebabCase(templateName)}.tsx`)});
       }, {});
+
     graphql(
       `
       {
-        posts: allDatoCmsMenu(filter: { locale: { eq: "nl"}, menu05: { eq: "Header"}}) {
+        posts: allDatoCmsMenu(filter: { locale: { eq: "nl"}}) {
           edges {
             node {
               menu05
@@ -84,7 +85,6 @@ exports.createPages = ({graphql, actions}) => {
       const blogPostTemplate = path.resolve(`src/templates/pages.js`);
       // Create blog pages
       posts
-        .filter(post => post.menu05.startsWith('Header'))
         .forEach(post => {
           if(typeof(post) == "object"){
             if(post.menu15 != null){

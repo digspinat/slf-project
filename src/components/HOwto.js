@@ -2,11 +2,9 @@ import * as React from "react";
 import {
   Segment,Card,Header
 } from "semantic-ui-react";
-import { Link } from "gatsby";
 import "../css/responsive.css";
 import "../css/semantic.min.css";
 import "prismjs/themes/prism-okaidia.css";
-import mainLogo from'../images/logo.jpeg';
 import { StaticQuery, graphql } from "gatsby"
 import "../css/styles.css";
 
@@ -56,14 +54,14 @@ export default () => (
       <div className="masthead">
         <Segment vertical  style={{paddingLeft: 10}}>
           {data.allDatoCmsPage.edges.map(({node})=> {
-              if(node.page05 == "Test page modular | How to"){
+              if(node.page05 === "Test page modular | How to"){
                 for(let prop in node.page20) {
                   if(Object.keys(node.page20[prop]).length > 1){
                     let classhead = "customheadStyleHead";
-                    if(node.page20[prop].block4080.cssClassName == "Header Bold and Text  Normal")
+                    if(node.page20[prop].block4080.cssClassName === "Header Bold and Text  Normal")
                     {
                       classhead = "customheadStyleHead"
-                    }else if(node.page20[prop].block4080.cssClassName == "Header Normal Text Bold"){
+                    }else if(node.page20[prop].block4080.cssClassName === "Header Normal Text Bold"){
                       classhead = "customheadStyleDesc"
                     }
                   return(

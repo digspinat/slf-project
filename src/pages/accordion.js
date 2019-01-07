@@ -1,6 +1,6 @@
 import * as React from "react";
 import {
-    Accordion,Icon,Header
+    Accordion,Header
 } from "semantic-ui-react";
 import "../css/styles.css";
 import "../css/responsive.css";

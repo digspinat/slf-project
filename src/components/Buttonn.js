@@ -1,12 +1,11 @@
 import * as React from "react";
 import {
-  Segment,Tab,Icon,Header,Button
+  Segment,Icon,Header,Button
 } from "semantic-ui-react";
 import { Link } from "gatsby";
 import "../css/responsive.css";
 import "../css/semantic.min.css";
 import "prismjs/themes/prism-okaidia.css";
-import mainLogo from'../images/logo.jpeg';
 import { StaticQuery, graphql } from "gatsby"
 import "../css/styles.css";
 
@@ -46,11 +45,11 @@ export default () => (
       <div className="masthead">
         <Segment vertical  style={{paddingLeft: 10}}>
           {data.allDatoCmsPage.edges.map(({node})=> {
-              if(node.page05 == "Test page modular | links + animated"){
+              if(node.page05 === "Test page modular | links + animated"){
                 for(let prop in node.page20) {
                   if(Object.keys(node.page20[prop]).length > 1){
                     let but=true;
-                    if(node.page20[prop].block4510.cssClassName == "Links text")
+                    if(node.page20[prop].block4510.cssClassName === "Links text")
                     {
                           but=false;
                     }

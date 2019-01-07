@@ -5,7 +5,6 @@ import {
 import "../css/responsive.css";
 import "../css/semantic.min.css";
 import "prismjs/themes/prism-okaidia.css";
-import mainLogo from'../images/logo.jpeg';
 import { StaticQuery, graphql } from "gatsby"
 import "../css/styles.css";
 

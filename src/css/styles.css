@@ -1,9 +1,23 @@
+.column.myGridClass {
+  text-align: center;
+  padding: 0px !important;
+}
+.T2op {
+  margin-top: 50px;
+}
 .hidden.menu {
   display: none;
 }
 .ui.segment.header {
   margin-top: 36px !important;
   padding: 4px !important;
+}
+.contentWrapper .ui.grid {
+  margin: 0px;
+  padding: 0px;
+}
+.ui.sidebar {
+  overflow-y: visible !important;
 }
 .masthead.segment {
   padding: 0;
@@ -171,6 +185,9 @@
 @media only screen and (max-width: 767px) {
   .masthead.segment {
     /* min-height: 350px; */
+  }
+  .T2op {
+    margin-top: 110px !important;
   }
   .ui.container {
     margin: 0px !important;

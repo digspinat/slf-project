@@ -1,0 +1,92 @@
+[
+    {
+        "componentChunkName": "component---src-pages-index-js",
+        "jsonName": "index",
+        "path": "/"
+    },
+    {
+        "componentChunkName": "component---src-templates-pages-js",
+        "jsonName": "-7bc",
+        "path": "//"
+    },
+    {
+        "componentChunkName": "component---src-pages-accordion-js",
+        "jsonName": "accordion-c2e",
+        "path": "/accordion/"
+    },
+    {
+        "componentChunkName": "component---src-pages-button-js",
+        "jsonName": "button-1cf",
+        "path": "/button/"
+    },
+    {
+        "componentChunkName": "component---src-pages-contact-js",
+        "jsonName": "contact-26a",
+        "path": "/contact/"
+    },
+    {
+        "componentChunkName": "component---cache-dev-404-page-js",
+        "jsonName": "dev-404-page-5f9",
+        "path": "/dev-404-page/"
+    },
+    {
+        "componentChunkName": "component---src-pages-feature-js",
+        "jsonName": "feature-49d",
+        "path": "/feature/"
+    },
+    {
+        "componentChunkName": "component---src-pages-header-js",
+        "jsonName": "header-3d7",
+        "path": "/header/"
+    },
+    {
+        "componentChunkName": "component---src-pages-headerpart-2-js",
+        "jsonName": "headerpart-2-5ce",
+        "path": "/headerpart2/"
+    },
+    {
+        "componentChunkName": "component---src-pages-howto-js",
+        "jsonName": "howto-85b",
+        "path": "/howto/"
+    },
+    {
+        "componentChunkName": "component---src-pages-milestone-2-js",
+        "jsonName": "milestone-2-8e5",
+        "path": "/milestone2/"
+    },
+    {
+        "componentChunkName": "component---src-pages-tabs-js",
+        "jsonName": "tabs-d30",
+        "path": "/tabs/"
+    },
+    {
+        "componentChunkName": "component---src-templates-pages-js",
+        "jsonName": "test-page-modular-accordion-1-5-50f",
+        "path": "/test-page-modular-accordion-1-5/"
+    },
+    {
+        "componentChunkName": "component---src-templates-pages-js",
+        "jsonName": "test-page-modular-how-to-a81",
+        "path": "/test-page-modular-how-to/"
+    },
+    {
+        "componentChunkName": "component---src-templates-pages-js",
+        "jsonName": "test-page-modular-links-animated-b05",
+        "path": "/test-page-modular-links-animated/"
+    },
+    {
+        "componentChunkName": "component---src-templates-pages-js",
+        "jsonName": "test-page-modular-tabs-horizontal-no-images-c93",
+        "path": "/test-page-modular-tabs-horizontal-no-images/"
+    },
+    {
+        "componentChunkName": "component---src-templates-pages-js",
+        "jsonName": "this-is-slug-70a",
+        "path": "/this-is-slug/"
+    },
+    {
+        "componentChunkName": "component---src-templates-pages-js",
+        "jsonName": "ver-tab-e6b",
+        "path": "/ver-tab/"
+    }
+]

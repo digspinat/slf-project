@@ -1,6 +1,6 @@
 import * as React from "react";
 import {
-  Segment,Image,Grid,Input,Menu,Dropdown,Icon
+  Segment,Image,Grid,Input
 } from "semantic-ui-react";
 import "../css/responsive.css";
 import "../css/semantic.min.css";
