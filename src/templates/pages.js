@@ -141,11 +141,11 @@ const Pages = ({data}) => {
   const mapQuotetab = myData.map(data => {
     if ('block1505' in data) {
       let myclassnme = 'buttonpad';
-      if (data.block15150.cssClassName === 'Quote background blue') {
-        myclassnme = 'bluebackgrnd buttonpad';
-      } else if (data.block15150.cssClassName === 'Quote background red') {
-        myclassnme = 'redbackgrnd buttonpad';
-      }
+      // if (data.block15150.cssClassName === 'Quote background blue') {
+      //   myclassnme = 'bluebackgrnd buttonpad';
+      // } else if (data.block15150.cssClassName === 'Quote background red') {
+      //   myclassnme = 'redbackgrnd buttonpad';
+      // }
       let urlblock1525 = false;
       if (data.block1525 != null) {
         urlblock1525 = true;
